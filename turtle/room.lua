@@ -88,6 +88,83 @@ end
 
 tr = true
 
+while ch <= math.ceil(height/3)*3 do
+	down()
+
+	for wwidth=1,width do
+		cw = wwidth
+
+		for llength=1,length do
+			cl = llength
+
+			if cl < length then
+				dig()
+				digUp()
+				digDown()
+				forward()
+			end
+		end
+
+		if cw < width then
+			if tr then
+				tr = false
+				right()
+			else
+				tr = true
+				left()
+			end
+			toss()
+		end
+		
+	end
+
+	if ch < height then
+		turtle.turnLeft(); turtle.turnLeft()
+		digDown()
+		down()
+		digDown()
+	end
+
+	ch = ch + 3
+end
+
+while ch <= height % 3 do
+
+	for wwidth=1,width do
+		cw = wwidth
+
+		for llength=1,length do
+			cl = llength
+
+			if cl < length then
+				dig()
+				forward()
+			end
+		end
+
+		if cw < width then
+			if tr then
+				tr = false
+				right()
+			else
+				tr = true
+				left()
+			end
+			toss()
+		end
+		
+	end
+
+	if ch < height then
+		turtle.turnLeft(); turtle.turnLeft()
+		digDown()
+		down()
+	end
+
+	ch = ch + 1
+end
+
+--[[
 for hheight=1,height do
 	ch = hheight
 
@@ -122,5 +199,5 @@ for hheight=1,height do
 		down()
 	end
 end
-
+]]--
 
