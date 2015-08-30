@@ -132,9 +132,9 @@ while ch <= math.floor(height/3)*3 do
 	ch = ch + 1
 end
 
-start = ch
 while ch <= height do
 	ch = ch + 1
+	print("start, ch " .. ch .. " and height " .. height)
 
 	for wwidth=1,width do
 		cw = wwidth
