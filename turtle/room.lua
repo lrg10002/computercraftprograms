@@ -12,24 +12,6 @@ function toss()
 	end
 end
 
-function forward()
-	count = 0
-	while not turtle.forward() and count < 50 do
-		turtle.attack()
-		sleep(0.5)
-		count = count + 1
-	end
-end
-
-function down()
-	count = 0
-	while not turtle.down() and count < 50 do
-		turtle.attackDown()
-		sleep(0.5)
-		count = count + 1
-	end
-end
-
 function dig()
 	count = 0
 	while not turtle.dig() and count < 50 and turtle.detect() do
@@ -56,6 +38,32 @@ function digDown()
 		count = count + 1
 	end
 end
+
+function forward()
+	count = 0
+	while not turtle.forward() and count < 50 do
+		turtle.attack()
+		if turtle.detect() then
+			dig()
+		end
+		sleep(0.5)
+		count = count + 1
+	end
+end
+
+function down()
+	count = 0
+	while not turtle.down() and count < 50 do
+		turtle.attackDown()
+		if turtle.detectDown() then
+			digDown()
+		end
+		sleep(0.5)
+		count = count + 1
+	end
+end
+
+
 
 function left()
 	turtle.turnLeft()
