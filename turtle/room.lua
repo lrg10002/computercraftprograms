@@ -134,6 +134,7 @@ end
 
 start = ch
 while ch <= height do
+	ch = ch + 1
 
 	for wwidth=1,width do
 		cw = wwidth
