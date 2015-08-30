@@ -6,7 +6,7 @@ cl, cw, ch = 1, 1, 1
 compact = height < 3
 
 function toss()
-	for i,1,16 do
+	for i=1,16 do
 		turtle.select(i)
 		turtle.dropUp()
 	end
