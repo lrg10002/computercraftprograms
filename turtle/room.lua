@@ -99,6 +99,6 @@ for hheight=1,height-1 do
 	turtle.turnLeft(); turtle.turnLeft()
 	digDown()
 	down()
-	end
 end
+
 
