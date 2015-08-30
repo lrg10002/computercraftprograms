@@ -73,32 +73,38 @@ end
 
 tr = true
 
-for hheight=1,height-1 do
+for hheight=1,height do
 	ch = hheight
 
-	for wwidth=1,width-1 do
+	for wwidth=1,width do
 		cw = wwidth
 
-		for llength=1,length-1 do
+		for llength=1,length do
 			cl = llength
 
-			dig()
-			forward()
+			if cl < length then
+				dig()
+				forward()
+			end
 		end
 
-		if tr then
-			tr = false
-			right()
-		else
-			tr = true
-			left()
+		if cw < width then
+			if tr then
+				tr = false
+				right()
+			else
+				tr = true
+				left()
+			end
 		end
 		
 	end
 
-	turtle.turnLeft(); turtle.turnLeft()
-	digDown()
-	down()
+	if ch < height then
+		turtle.turnLeft(); turtle.turnLeft()
+		digDown()
+		down()
+	end
 end
 
 
