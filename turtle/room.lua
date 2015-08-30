@@ -14,7 +14,7 @@ cl, cw, ch = 1, 1, 1
 function checkFuel()
 	if turtle.getFuelLevel() < 1 then
 		print("Out of fuel! Place fuel in inventory and press enter!")
-		while {os.pullEvent("key")}[2] != keys.enter do end
+		while {os.pullEvent("key")}[2] ~= keys.enter do end
 		for i=1,16 do
 			turtle.select(i)
 			turtle.refuel()
