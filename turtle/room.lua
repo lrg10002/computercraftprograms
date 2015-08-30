@@ -67,10 +67,6 @@ end
 
 function left(ud)
 	turtle.turnLeft()
-	if ud then
-		digUp()
-		digDown()
-	end
 	dig()
 	forward()
 	turtle.turnLeft()
@@ -78,10 +74,6 @@ end
 
 function right(ud)
 	turtle.turnRight()
-	if ud then
-		digUp()
-		digDown()
-	end
 	dig()
 	forward()
 	turtle.turnRight()
@@ -115,6 +107,8 @@ while ch <= math.ceil(height/3)*3 do
 			end
 		end
 
+		digUp()
+		digDown()
 		if cw < width then
 			if tr then
 				tr = false
