@@ -13,7 +13,7 @@ function toss()
 end
 
 function dig()
-	count = 0
+	local count = 0
 	while not turtle.dig() and count < 50 and turtle.detect() do
 		turtle.attack()
 		sleep(0.5)
@@ -22,7 +22,7 @@ function dig()
 end
 
 function digUp()
-	count = 0
+	local count = 0
 	while not turtle.digUp() and count < 50 and turtle.detectUp() do
 		turtle.attackUp()
 		sleep(0.5)
@@ -31,7 +31,7 @@ function digUp()
 end
 
 function digDown()
-	count = 0
+	local count = 0
 	while not turtle.digDown() and count < 50 and turtle.detectDown() do
 		turtle.attackDown()
 		sleep(0.5)
@@ -40,7 +40,7 @@ function digDown()
 end
 
 function forward()
-	count = 0
+	local count = 0
 	while not turtle.forward() and count < 50 do
 		turtle.attack()
 		if turtle.detect() then
@@ -52,7 +52,7 @@ function forward()
 end
 
 function down()
-	count = 0
+	local count = 0
 	while not turtle.down() and count < 50 do
 		turtle.attackDown()
 		if turtle.detectDown() then
@@ -61,31 +61,31 @@ function down()
 		sleep(0.5)
 		count = count + 1
 	end
-	ch = ch + 1
+	if count < 50 then ch = ch + 1 end
 end
 
 
 
 function left(ud)
 	turtle.turnLeft()
-	dig()
-	forward()
-	turtle.turnLeft()
 	if ud then
 		digUp()
 		digDown()
 	end
+	dig()
+	forward()
+	turtle.turnLeft()
 end
 
 function right(ud)
 	turtle.turnRight()
-	dig()
-	forward()
-	turtle.turnRight()
 	if ud then
 		digUp()
 		digDown()
 	end
+	dig()
+	forward()
+	turtle.turnRight()
 end
 
 function dropAll()
