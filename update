@@ -1,0 +1,6 @@
+args = {...}
+
+if not string.match(args[1], ".*%.lua") then
+	args[1] = args[1] .. ".lua"
+end
+
