@@ -53,14 +53,14 @@ end
 function left()
 	turtle.turnLeft()
 	dig()
-	move()
+	forward()
 	turtle.turnLeft()
 end
 
 function right()
 	turtle.turnRight()
 	dig()
-	move()
+	forward()
 	turtle.turnRight()
 end
 
