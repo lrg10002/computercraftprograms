@@ -88,7 +88,7 @@ end
 
 tr = true
 
-while ch <= math.ceil(height/3)*3 do
+while ch <= math.floor(height/3)*3 do
 	ch = ch + 2
 	digDown()
 	down()
