@@ -61,22 +61,31 @@ function down()
 		sleep(0.5)
 		count = count + 1
 	end
+	ch = ch + 1
 end
 
 
 
-function left()
+function left(ud)
 	turtle.turnLeft()
 	dig()
 	forward()
 	turtle.turnLeft()
+	if ud then
+		digUp()
+		digDown()
+	end
 end
 
-function right()
+function right(ud)
 	turtle.turnRight()
 	dig()
 	forward()
 	turtle.turnRight()
+	if ud then
+		digUp()
+		digDown()
+	end
 end
 
 function dropAll()
@@ -89,6 +98,7 @@ end
 tr = true
 
 while ch <= math.ceil(height/3)*3 do
+	digDown()
 	down()
 
 	for wwidth=1,width do
@@ -108,10 +118,10 @@ while ch <= math.ceil(height/3)*3 do
 		if cw < width then
 			if tr then
 				tr = false
-				right()
+				right(true)
 			else
 				tr = true
-				left()
+				left(true)
 			end
 			toss()
 		end
@@ -122,10 +132,7 @@ while ch <= math.ceil(height/3)*3 do
 		turtle.turnLeft(); turtle.turnLeft()
 		digDown()
 		down()
-		digDown()
 	end
-
-	ch = ch + 3
 end
 
 while ch <= height % 3 do
@@ -145,10 +152,10 @@ while ch <= height % 3 do
 		if cw < width then
 			if tr then
 				tr = false
-				right()
+				right(false)
 			else
 				tr = true
-				left()
+				left(false)
 			end
 			toss()
 		end
@@ -160,8 +167,6 @@ while ch <= height % 3 do
 		digDown()
 		down()
 	end
-
-	ch = ch + 1
 end
 
 --[[
