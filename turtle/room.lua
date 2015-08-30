@@ -126,12 +126,14 @@ while ch <= math.floor(height/3)*3 do
 		turtle.turnLeft(); turtle.turnLeft()
 		digDown()
 		down()
+		digDown()
+		down()
 	end
 	ch = ch + 1
 end
 
 start = ch
-while ch < start + height % 3 do
+while ch <= height do
 
 	for wwidth=1,width do
 		cw = wwidth
