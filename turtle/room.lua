@@ -25,7 +25,7 @@ end
 
 function dig()
 	count = 0
-	while not turtle.dig() and count < 50 do
+	while not turtle.dig() and count < 50 and turtle.detect() do
 		turtle.attack()
 		sleep(0.5)
 		count = count + 1
@@ -34,7 +34,7 @@ end
 
 function digUp()
 	count = 0
-	while not turtle.digUp() and count < 50 do
+	while not turtle.digUp() and count < 50 and turtle.detectUp() do
 		turtle.attackUp()
 		sleep(0.5)
 		count = count + 1
@@ -43,7 +43,7 @@ end
 
 function digDown()
 	count = 0
-	while not turtle.digDown() and count < 50 do
+	while not turtle.digDown() and count < 50 and turtle.detectDown() do
 		turtle.attackDown()
 		sleep(0.5)
 		count = count + 1
@@ -51,17 +51,17 @@ function digDown()
 end
 
 function left()
-	turtle.left()
+	turtle.turnLeft()
 	dig()
 	move()
-	turtle.left()
+	turtle.turnLeft()
 end
 
 function right()
-	turtle.right()
+	turtle.turnRight()
 	dig()
 	move()
-	turtle.right()
+	turtle.turnRight()
 end
 
 function dropAll()
