@@ -61,7 +61,6 @@ function down()
 		sleep(0.5)
 		count = count + 1
 	end
-	if count < 50 then ch = ch + 1 end
 end
 
 
@@ -98,6 +97,7 @@ end
 tr = true
 
 while ch <= math.ceil(height/3)*3 do
+	ch = ch + 2
 	digDown()
 	down()
 
@@ -133,6 +133,7 @@ while ch <= math.ceil(height/3)*3 do
 		digDown()
 		down()
 	end
+	ch = ch + 1
 end
 
 while ch <= height % 3 do
