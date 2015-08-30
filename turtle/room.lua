@@ -130,7 +130,8 @@ while ch <= math.floor(height/3)*3 do
 	ch = ch + 1
 end
 
-while ch <= height % 3 do
+start = ch
+while ch < start + height % 3 do
 
 	for wwidth=1,width do
 		cw = wwidth
