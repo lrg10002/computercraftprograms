@@ -2,17 +2,15 @@ args = {...}
 
 url = "https://raw.githubusercontent.com/lrg10002/computercraftprograms/master/"
 
-if not string.match(args[1], ".*%.lua") then
-	args[1] = args[1] .. ".lua"
-end
-
 req = http.get(url .. args[1])
-if req.getResponseCode() == 404 then
-	print("Could not find the program you specified!")
-	return
+if req == nil then
+	req = http.get(url .. args[1] .. ".lua")
+	if req == nil then
+		print("Could not find the program you specified!")
+		return
+	end
 end
 
-args[1] = string.sub(args[1], 1, -5)
 file = fs.open(args[1], "w")
 file.write(req.readAll())
 file.flush()
