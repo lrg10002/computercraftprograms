@@ -133,7 +133,6 @@ while ch <= math.floor(height/3)*3 do
 end
 
 while ch <= height do
-	ch = ch + 1
 	print("start, ch " .. ch .. " and height " .. height)
 
 	for wwidth=1,width do
@@ -166,6 +165,8 @@ while ch <= height do
 		digDown()
 		down()
 	end
+
+	ch = ch + 1
 end
 
 --[[
